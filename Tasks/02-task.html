@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="password"></div>
     <script>
         /*
         Задание:
@@ -16,21 +17,21 @@
         */
 
         function createUser(login, email) {
-            return {
-                login: login,
-                email: email,
-
-                showContactInfo: function () {
+                this.login = login;
+                this.email= email;
+                this.showContactInfo = function (element) {
                     console.log("Мой логин " + this.login + ", мой email " + this.email);
                 }
-            }
         }
 
-        let user1 = createUser("admin", "admin@example.com");
-        let user2 = createUser("user", "user@example.com");
+        let user1 = new createUser("admin", "admin@example.com");
+        let user2 = new createUser("user", "user@example.com");
 
-        user1.showContactInfo();
-        user2.showContactInfo();
+        let password = document.querySelector("#password");
+        let password1 = document.querySelector("#password");
+
+        user1.showContactInfo(password);
+        user2.showContactInfo(password1);
     </script>
 </body>
 
