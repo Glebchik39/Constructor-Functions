@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+</head>
+
+<body>
+
+    <div id="user"></div>
+    <script>
+        /*
+        Задание:
+        Выполните рефакторинг кода. Сделайте так, чтобы объекты создавались не через литералы, а через функцию конструктор.
+        */
+
+        // let user1 = {
+        //     firstName: "Ivan",
+        //     lastName: "Ivanov",
+            
+        //     show: function () {
+        //         console.log(this.firstName + " " + this.lastName);
+        //     }
+        // }
+
+        // let user2 = {
+        //     firstName: "Olga",
+        //     lastName: "Petrova",
+            
+        //     show: function () {
+        //         console.log(this.firstName + " " + this.lastName);
+        //     }
+        // }
+
+        // user1.show();
+        // user2.show();
+
+
+            let user1 = {
+                firstName: "Ivan",
+                lastName: "Ivanov",
+
+                showStats: function (element) {
+                element.insertAdjacentHTML("beforeend", `Имя: ${this.firstName}<br />`);
+                element.insertAdjacentHTML("beforeend", `Фамилия: ${this.lastName}<br />`); 
+            }
+        };
+        let user = document.querySelector("#user")
+        user1.showStats(user);
+    </script>
+</body>
+
+</html>
