@@ -17,39 +17,21 @@
         Выполните рефакторинг кода. Сделайте так, чтобы объекты создавались не через литералы, а через функцию конструктор.
         */
 
-        // let user1 = {
-        //     firstName: "Ivan",
-        //     lastName: "Ivanov",
-            
-        //     show: function () {
-        //         console.log(this.firstName + " " + this.lastName);
-        //     }
-        // }
+        function user1(firstname,lastname) {
+            this.firstname = firstname;
+            this.lastname = lastname;
 
-        // let user2 = {
-        //     firstName: "Olga",
-        //     lastName: "Petrova",
-            
-        //     show: function () {
-        //         console.log(this.firstName + " " + this.lastName);
-        //     }
-        // }
-
-        // user1.show();
-        // user2.show();
-
-
-            let user1 = {
-                firstName: "Ivan",
-                lastName: "Ivanov",
-
-                showStats: function (element) {
-                element.insertAdjacentHTML("beforeend", `Имя: ${this.firstName}<br />`);
-                element.insertAdjacentHTML("beforeend", `Фамилия: ${this.lastName}<br />`); 
+            this.ShowStats() =function(element)
+            {
+                element.insertAdjacentHTML("beforeend", `Имя: ${this.firstname}" /><br />`);
+                element.insertAdjacentHTML("beforeend", `Фамилия: ${this.lastname}" /><br />`);
             }
-        };
-        let user = document.querySelector("#user")
-        user1.showStats(user);
+        }
+        let name = new user1("Глеб", "Любимов");
+        let user = document.querySelector("#user");
+        name.ShowStats(user1);
+
+
     </script>
 </body>
 
